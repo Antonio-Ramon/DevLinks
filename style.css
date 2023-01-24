@@ -1,0 +1,147 @@
+* {
+  /* seletor universal propriedades margin/padding em 0 significa ignorar os margins
+  que o navegador tem por padrão */
+  margin: 0;
+  padding: 0;
+
+  /* permite que as dimenções que forem colocadas sobre a div respeitem
+  o limite configurados anteriormente "width"
+   */
+  box-sizing: border-box;
+}
+
+:root {
+  --text-color: white;
+  --bg-url: url(./assets/bg-mobile.jpg);
+  --stroke-color: 1px solid rgba(255, 255, 255, 0.5);
+  --hover-color: 1.5px solid white;
+  --surface-color: rgba(255, 255, 255, 0.1);
+  --surface-color-hover: rgba(255, 255, 255, 0.05);
+  --highlight-color: rgba(255, 255, 255, 0.2);
+}
+
+.light {
+  --text-color: black;
+  --bg-url: url(./assets/bg-mobile-light.jpg);
+  --stroke-color: 1px solid rgba(0, 0, 0, 0.5);
+  --hover-color: 1.5px solid black;
+  --surface-color: rgba(0, 0, 0, 0.05);
+  --surface-color-hover: rgba(0, 0, 0, 0.02);
+  --highlight-color: rgba(0, 0, 0, 0.1);
+}
+
+body {
+  /* 
+  background-image: url();
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover; 
+  */
+
+  /* Shorthand para os comandos acima */
+  background: var(--bg-url) no-repeat top center / cover;
+}
+
+body * {
+  font-family: "Inter", sans-serif;
+  color: var(--text-color);
+}
+
+/* Alguns elementos HTML por padrão são "inline" ou seja nao aceitam as propriedades
+de "margin"  como foi o exemplo do "#profile img" */
+#container {
+  /* border: 1px solid white; */
+  width: 360px;
+  /* margin e padding tem suas propriedades resumidas na seguinte ordem
+  (TOP -> RIGHT -> BOTTOM -> LEFT) */
+  margin: 56px auto 32px;
+  padding: 0 24px;
+}
+
+/* a tag pai do #profile img (#profile) consegue definir o posicionamento dos elementos filhos*/
+#profile {
+  text-align: center;
+  padding: 24px;
+}
+
+#profile img {
+  width: 120px;
+}
+
+#profile p {
+  /* Tamanho padrão de fontes no navegador 16px */
+  font-weight: 500;
+  line-height: 24px;
+  margin-top: 8px;
+}
+
+/* links */
+
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px 0;
+}
+
+ul li a {
+  border: var(--text-color);
+  border-radius: 8px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 16px 24px;
+  text-decoration: none;
+
+  background: var(--surface-color);
+  border: var(--stroke-color);
+
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+
+  transition: background 0.3s;
+}
+
+ul li a:hover {
+  background: var(--surface-color-hover);
+  border: var(--hover-color);
+}
+
+/* Social Links */
+
+#social-links {
+  /* border: 1px solid var(--text-color); */
+  display: flex;
+  justify-content: center;
+  padding: 24px 0;
+  gap: 5px;
+  font-size: 24px;
+}
+
+#social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  border-radius: 50%;
+
+  transition: background 0.3s;
+}
+
+#social-links a:hover {
+  background: var(--highlight-color);
+}
+
+footer {
+  /* border: 1px solid var(--text-color); */
+  padding: 24px 0;
+  text-align: center;
+  font-size: 14px;
+}
+
+footer a {
+  text-decoration: none;
+}
