@@ -56,7 +56,8 @@ body * {
 de "margin"  como foi o exemplo do "#profile img" */
 #container {
   /* border: 1px solid white; */
-  width: 360px;
+  width: 100%;
+  max-width: 588px;
   /* margin e padding tem suas propriedades resumidas na seguinte ordem
   (TOP -> RIGHT -> BOTTOM -> LEFT) */
   margin: 56px auto 32px;
