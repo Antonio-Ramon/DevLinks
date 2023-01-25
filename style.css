@@ -10,9 +10,11 @@
   box-sizing: border-box;
 }
 
+/* Definição das configurações para tema da classe definida na tag <html>*/
 :root {
   --text-color: white;
   --bg-url: url(./assets/bg-mobile.jpg);
+  --avatar-url: url(./assets/avatar-dark.png);
   --stroke-color: 1px solid rgba(255, 255, 255, 0.5);
   --hover-color: 1.5px solid white;
   --surface-color: rgba(255, 255, 255, 0.1);
@@ -24,6 +26,7 @@
 .light {
   --text-color: black;
   --bg-url: url(./assets/bg-mobile-light.jpg);
+  --avatar-url: url(./assets/avatar-light.png);
   --stroke-color: 1px solid rgba(0, 0, 0, 0.5);
   --hover-color: 1.5px solid black;
   --surface-color: rgba(0, 0, 0, 0.05);
@@ -86,6 +89,7 @@ de "margin"  como foi o exemplo do "#profile img" */
   /* border: 1px solid white; */
   width: 65px;
   margin: 4px auto;
+  cursor: pointer;
 }
 
 #switch button {
@@ -95,6 +99,7 @@ de "margin"  como foi o exemplo do "#profile img" */
   border: 0;
   border-radius: 50%;
   color: black;
+  cursor: pointer;
 
   /* Comandos para sobrepor elementos */
   position: absolute;
@@ -110,6 +115,8 @@ de "margin"  como foi o exemplo do "#profile img" */
 .light #switch button {
   left: initial;
   right: 0;
+  transform: translateX(50%);
+  transform: translateY(-50%);
 }
 
 #switch span {
