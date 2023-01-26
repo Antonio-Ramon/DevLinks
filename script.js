@@ -9,7 +9,21 @@ function toggleMode() {
   // substituir a imagem
   if (html.classList.contains("light")) {
     img.setAttribute("src", "./assets/avatar-light.png");
+    saveTheme();
   } else {
     img.setAttribute("src", "./assets/avatar-dark.png");
+    saveTheme();
   }
 }
+
+// Salvar o tema no localStorage
+function saveTheme() {
+  let theme = document.documentElement.getAttribute("class");
+  localStorage.setItem("class", theme);
+}
+
+// carregar o dados salvos no localStorage
+window.onload = () => {
+  var themeState = localStorage.getItem("class");
+  document.documentElement.setAttribute("class", themeState);
+};
