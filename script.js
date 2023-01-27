@@ -23,7 +23,7 @@ function saveTheme() {
 }
 
 // carregar o dados salvos no localStorage
-window.onload = () => {
+document.addEventListener("DOMContentLoaded", function () {
   var themeState = localStorage.getItem("class");
   document.documentElement.setAttribute("class", themeState);
-};
+});
